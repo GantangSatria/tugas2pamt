@@ -28,17 +28,16 @@ fun CalculatorScreen(viewModel: CalculatorViewModel) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF121212))
-            .padding(16.dp),
+            .padding(24.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        // Display
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(120.dp)
+                .height(160.dp)
                 .padding(8.dp),
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF121212)),
             elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
         ) {
             Box(
@@ -58,7 +57,6 @@ fun CalculatorScreen(viewModel: CalculatorViewModel) {
             }
         }
 
-        // Tombol kalkulator
         val buttons = listOf(
             listOf("7", "8", "9", "÷"),
             listOf("4", "5", "6", "×"),
@@ -102,7 +100,6 @@ fun CalculatorButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // Warna tombol sesuai jenisnya
     val backgroundColor = when (label) {
         "C" -> Color(0xFFE53935) // Merah untuk Clear
         "=", "+", "-", "×", "÷" -> Color(0xFFFF9800) // Oranye untuk operasi
